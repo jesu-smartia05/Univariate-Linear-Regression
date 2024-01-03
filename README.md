@@ -15,18 +15,41 @@ To implement univariate Linear Regression to fit a straight line using least squ
 6.	Obtain the straight line equation Y=mX+b and plot the scatterplot.
 ## Program
 ```
+'''
+Program for Univariate linear regression using the least squares method.
+Developed by: JESU SMARTIA A
+RegisterNumber:212223110016
+'''
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.array([0,1,2,3,4,5,6,7,8,9])
+y = np.array([1,3,2,5,7,8,8,9,10,12])
+plt.scatter(x,y)
+plt.show()
+xmean = np.mean(x)
+ymean = np.mean(y)
+num=0
+den=0
+for i in range(len(x)):
+    num+=(x[i]-xmean)*(y[i]-ymean)
+    den+= (x[i]-xmean)**2
+m = num/den
+b = ymean - m*xmean
+print(m,b)
+ypred = m*x+b
+print(ypred)
 
-
-
-
-
-
+plt.scatter(x,y,color='Red')
+plt.plot(x,ypred,color='Blue')
+plt.show()
 ```
 ## Output
-</br>
-</br>
-</br>
-</br>
+
+![Screenshot 2024-01-03 063608](https://github.com/jesu-smartia05/Univariate-Linear-Regression/assets/148514819/c32fed5f-3425-455c-9eae-f2804ad68901)
+
+![Screenshot 2024-01-03 063628](https://github.com/jesu-smartia05/Univariate-Linear-Regression/assets/148514819/b04477c1-620b-477e-beed-582e94f84875)
+
+![Screenshot 2024-01-03 063646](https://github.com/jesu-smartia05/Univariate-Linear-Regression/assets/148514819/8e163bbb-4329-439b-b900-cb95c1036e52)
 
 ## Result
 Thus the univariate Linear Regression was implemented to fit a straight line using least squares.
